@@ -1,12 +1,22 @@
 import React from 'react'
+import { Navigate, Outlet } from 'react-router'
+import Header from './Header'
+import { useAuth } from '../context/AuthContext'
 
-function ProtectedRoute({children}) {
+function ProtectedRoute() {
 
- const isAuth = true
+const {globalUser, isLoading} = useAuth()
+
+ const isAuth = globalUser
 
 
   return (
-    <div>{isAuth && children}</div>
+    isLoading ? <p>Loading...</p> :isAuth ?  
+    <>
+    <Header/>
+    <Outlet/>
+    </> : <Navigate to='/' replace/> 
+
   )
 }
 

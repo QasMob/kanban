@@ -6,18 +6,25 @@ import ProtectedRoute from "./components/ProtectedRoute"
 import PublicRoute from './components/PublicRoute'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Task from './components/Task'
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<PublicRoute><Home/></PublicRoute>}/>
-      <Route path="/taskboard" element={<ProtectedRoute><TaskBoard/></ProtectedRoute>}/>
-      <Route path="/login" element={<PublicRoute><Login/></PublicRoute>}/>
-      <Route path="/register" element={<PublicRoute><Register/></PublicRoute>}/>
+      <Route element={<PublicRoute/>}>
+      <Route path="/" element={<Home/>} />
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Register/>} />
+      </Route>
+
+      <Route element={<ProtectedRoute/>}>
+      <Route path="/taskboard" element={<TaskBoard/>}/>
+      <Route path="/taskForm" element={<Task/>}/>
+     </Route>
       <Route path="*" element={<NotFound/>}/>
-      </Routes>
+    </Routes>
     </BrowserRouter>
   )
 }
