@@ -65,8 +65,60 @@
 
 .taskboard {
     margin-top: 5rem;
+    /* border: 1px solid red; */
+    /* display: flex; */
+    /* flex-direction: column;
+     */
 }
 
+.taskboard__btn {
+    border: 1px solid white;
+}
+
+.task { 
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+}
+
+
+.todo,
+.doing,
+.done {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    gap: 3rem;
+}
+
+
+.todo > :first-child,
+.doing > :first-child ,
+.done > :first-child {
+    margin-top: 2rem;
+}
+
+.todo__card,
+.doing__card,
+.done__card {
+    /* margin-top: 1rem; */
+    border: 1px solid #4649af;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    min-width: 250px;
+}
+
+
+
+.task__card {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;    
+}
 
 
 @media (max-width: 639px) {
