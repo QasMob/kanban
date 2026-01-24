@@ -21,17 +21,17 @@ function TaskBoard() {
     setGlobalData(globalData.filter(item => item.id !== el.id))
     deleteTask(globalUser.uid, el.id)
   }
-
+  
 
   return (
     <section className='container taskboard'>
-    <button className='taskboard__btn'  onClick={() => navigate('/taskForm')}>Add Task</button>
 
+    <button className='taskboard__btn'  onClick={() => navigate('/taskForm')}>Add Task</button>
       <div className='task'>
         <div className='task__container'>
-        <h2>Todo</h2>
+        <h2 className='task__text'>Todo</h2>
         <div className='todo'>
-          {globalData.length > 0 && globalData.filter((el) => el.Status === 'todo')
+          {globalData?.length > 0 && globalData.filter((el) => el.Status === 'todo')
           .map((el) => {
             return (
               <div className='todo__card' key={el.id}>
@@ -45,9 +45,9 @@ function TaskBoard() {
         </div>
         </div>
         <div className='task__container'>
-          <h2>In Progress</h2>
+          <h2 className='task__text'>In Progress</h2>
          <div className='doing'>
-             {globalData.length > 0 && globalData.filter((el) => el.Status === 'doing')
+             {globalData?.length > 0 && globalData.filter((el) => el.Status === 'doing')
           .map((el) => {
             return (
               <div className='doing__card' key={el.id}>
@@ -62,9 +62,9 @@ function TaskBoard() {
          </div>
         </div>
           <div className='task__container'>
-             <h2>Done</h2>
+             <h2 className='task__text'>Done</h2>
         <div className='done'>
-             {globalData.length > 0 && globalData.filter((el) => el.Status === 'done')
+             {globalData?.length > 0 && globalData.filter((el) => el.Status === 'done')
           .map((el) => {
             return (
               <div className='done__card' key={el.id}>
